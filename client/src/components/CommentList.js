@@ -6,9 +6,7 @@ const CommentList = ({ postId }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const { data } = await axios.get(
-        `http://localhost:4001/posts/${postId}/comments`
-      )
+      const { data } = await axios.get(`http://localhost:4001/posts/${postId}/comments`)
       setComments(data)
     }
 
