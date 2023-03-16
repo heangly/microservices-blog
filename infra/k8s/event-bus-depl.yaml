@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: event-bus-deployment
+  name: event-bus-depl
 spec:
   replicas: 1
   selector:
@@ -14,15 +14,13 @@ spec:
     spec:
       containers:
         - name: event-bus
-          image: heanglypa/event-bus
-
+          image: cygnetops/event-bus-85
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: event-bus-service
+  name: event-bus-srv
 spec:
-  type: ClusterIP
   selector:
     app: event-bus
   ports:
